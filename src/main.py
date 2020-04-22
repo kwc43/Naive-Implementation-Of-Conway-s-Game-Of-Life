@@ -2,18 +2,18 @@ import math
 import numpy as np
 import pygame
 
-global_columns = 20
-global_rows = 20
+COLUMNS = 20
+ROWS = 20
 
 WIDTH = 25
 HEIGHT = 25
-WINDOW_SIZE = [WIDTH * global_rows, HEIGHT * global_columns]
+WINDOW_SIZE = [WIDTH * ROWS, HEIGHT * COLUMNS]
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 def main():
-    Run(global_columns, global_rows)
+    Run(COLUMNS, ROWS)
 
 def Run(cols, rows):
 
@@ -77,8 +77,8 @@ def CountNeighbours(temp, x, y):
 
     for i in range(-1, 2):
         for j in range(-1, 2):
-            column = (x + i + global_columns) % global_columns
-            row = (y + j + global_rows) % global_rows
+            column = (x + i + COLUMNS) % COLUMNS
+            row = (y + j + ROWS) % ROWS
             sum += temp[column][row]
     return sum
 
